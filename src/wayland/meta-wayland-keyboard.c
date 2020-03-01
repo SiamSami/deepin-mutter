@@ -64,7 +64,7 @@
 #include "backends/native/meta-event-native.h"
 #endif
 
-#define GSD_KEYBOARD_SCHEMA "org.gnome.settings-daemon.peripherals.keyboard"
+#define GSD_KEYBOARD_SCHEMA "com.deepin.wrap.gnome.settings-daemon.peripherals.keyboard"
 
 G_DEFINE_TYPE (MetaWaylandKeyboard, meta_wayland_keyboard,
                META_TYPE_WAYLAND_INPUT_DEVICE)
@@ -569,7 +569,7 @@ meta_wayland_keyboard_enable (MetaWaylandKeyboard *keyboard)
   MetaBackend *backend = meta_get_backend ();
   ClutterBackend *clutter_backend = clutter_get_default_backend ();
 
-  keyboard->settings = g_settings_new ("org.gnome.desktop.peripherals.keyboard");
+  keyboard->settings = g_settings_new ("com.deepin.wrap.gnome.desktop.peripherals.keyboard");
   g_signal_connect (keyboard->settings, "changed",
                     G_CALLBACK (settings_changed), keyboard);
 
